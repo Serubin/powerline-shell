@@ -3,19 +3,15 @@ class DefaultColor:
     This class should have the default colors for every segment.
     Please test every new segment with this theme first.
     """
-    USERNAME_FG = 250
-    USERNAME_BG = 240
-    USERNAME_ROOT_BG = 124
-
-    HOSTNAME_FG = 250
-    HOSTNAME_BG = 238
+    ANCHOR_FG = 250
+    ANCHOR_BG = 27
 
     HOME_SPECIAL_DISPLAY = True
     HOME_BG = 31  # blueish
     HOME_FG = 15  # white
     PATH_BG = 237  # dark grey
-    PATH_FG = 250  # light grey
-    CWD_FG = 254  # nearly-white grey
+    PATH_FG = 45  # light blue
+    CWD_FG = 250  # light blue
     SEPARATOR_FG = 244
 
     READONLY_BG = 124

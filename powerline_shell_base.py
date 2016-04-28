@@ -30,7 +30,8 @@ class Powerline:
             'lock': u'\uE0A2',
             'network': u'\uE0A2',
             'separator': u'\uE0B0',
-            'separator_thin': u'\uE0B1'
+            'separator_thin': u'\uE0B1',
+            'git_branch': u'\uE0A0'
         },
         'flat': {
             'lock': '',
@@ -56,6 +57,7 @@ class Powerline:
         self.network = Powerline.symbols[mode]['network']
         self.separator = Powerline.symbols[mode]['separator']
         self.separator_thin = Powerline.symbols[mode]['separator_thin']
+        self.git_branch = Powerline.symbols[mode]['git_branch']
         self.segments = []
 
     def color(self, prefix, code):
@@ -98,13 +100,13 @@ class Powerline:
 
 class RepoStats:
     symbols = {
-        'detached': u'\u2693',
-        'ahead': u'\u2B06',
-        'behind': u'\u2B07',
-        'staged': u'\u2714',
-        'not_staged': u'\u270E',
-        'untracked': u'\u2753',
-        'conflicted': u'\u273C'
+        'detached': '',
+        'ahead': '',
+        'behind': '',
+        'staged': '',
+        'not_staged': '',
+        'untracked': '',
+        'conflicted': ''
     }
 
     def __init__(self):
@@ -146,12 +148,12 @@ class RepoStats:
             if self[_key]:
                 s = u" {}{} ".format(self.n_or_empty(_key), self.symbols[_key])
                 powerline.append(s, fg, bg)
-        add('ahead', color.GIT_AHEAD_FG, color.GIT_AHEAD_BG)
-        add('behind', color.GIT_BEHIND_FG, color.GIT_BEHIND_BG)
-        add('staged', color.GIT_STAGED_FG, color.GIT_STAGED_BG)
-        add('not_staged', color.GIT_NOTSTAGED_FG, color.GIT_NOTSTAGED_BG)
-        add('untracked', color.GIT_UNTRACKED_FG, color.GIT_UNTRACKED_BG)
-        add('conflicted', color.GIT_CONFLICTED_FG, color.GIT_CONFLICTED_BG)
+        #add('ahead', color.GIT_AHEAD_FG, color.GIT_AHEAD_BG)
+        #add('behind', color.GIT_BEHIND_FG, color.GIT_BEHIND_BG)
+        #add('staged', color.GIT_STAGED_FG, color.GIT_STAGED_BG)
+        #add('not_staged', color.GIT_NOTSTAGED_FG, color.GIT_NOTSTAGED_BG)
+        #add('untracked', color.GIT_UNTRACKED_FG, color.GIT_UNTRACKED_BG)
+        #add('conflicted', color.GIT_CONFLICTED_FG, color.GIT_CONFLICTED_BG)
 
 
 def get_valid_cwd():
